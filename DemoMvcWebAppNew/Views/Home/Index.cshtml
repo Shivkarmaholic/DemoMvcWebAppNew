@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["htitle"]</h1>
+    
+
+    @if (ViewData != null)
+    {
+        <table class="table table-hover table-bordered ">
+            <tr>
+                <th>Emp Id</th>
+                <th>Emp Name</th>
+                <th>Emp Department</th>
+                <th>Emp Salary</th>
+            </tr>
+            @foreach (Employee e in (IEnumerable<Employee>)ViewData["emplist"])
+            {
+                <tr>          
+                    <td>@e.eid</td>
+                    <td>@e.ename</td>
+                    <td>@e.edept</td>
+                    <td>@e.esalary</td>
+                </tr>
+            }
+        </table>
+    }
+
+
+</div>
